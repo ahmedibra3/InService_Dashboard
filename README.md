@@ -57,7 +57,7 @@ This is a web-based application designed for managing home services. The admin d
 
 Follow the steps below to set up the project on your local machine.
 
-### 1. Install Dependencies
+**1. Install Dependencies**
 
 Ensure you have [Composer](https://getcomposer.org/) and [Node.js](https://nodejs.org/) installed on your machine.
 
@@ -66,6 +66,30 @@ Ensure you have [Composer](https://getcomposer.org/) and [Node.js](https://nodej
   ```bash
   git clone https://github.com/yourusername/homeservices-dashboard.git
   cd homeservices-dashboard
+- Install PHP dependencies using Composer:
+  composer install
+
+**2. Set Environment Variables**
+  - Copy the .env.example file to .env:
+    cp .env.example .env
+  - Edit the .env file and configure your database credentials and other environment-specific settings.
+  
+**3. Generate Application Key**
+    - Generate the application encryption key:
+      php artisan key:generate
+
+**4. Run Database Migrations**
+    - Run the migrations to create the necessary database tables:
+      php artisan migrate
+      
+**5. Build Frontend Assets**
+    - Compile the frontend assets using Laravel Mix:
+      npm run dev
+      
+**6. Serve the Application**
+    - Serve the Laravel application:
+      php artisan serve
+    - Your application will now be available at http://localhost:8000.
 
 ---
 
@@ -83,6 +107,20 @@ Ensure you have [Composer](https://getcomposer.org/) and [Node.js](https://nodej
 - Admin access is restricted to those with the private URL and credentials provided by the organization. Ensure that these details are kept confidential to prevent unauthorized access.
 - Regularly rotate admin credentials and update the private URL if necessary for enhanced security.
 - For additional security, ensure that sensitive data is stored and transmitted securely (e.g., using HTTPS).
+
+---
+
+## Contributing
+We welcome contributions from the community to improve the platform! To contribute:
+
+**1. Fork the repository.**
+**2. Create a new branch:**
+  git checkout -b feature/your-feature-name
+**3. Commit your changes:**
+    git commit -m "Describe your changes"
+**4. Push to the branch:**
+    git push origin feature/your-feature-name
+**5. Create a pull request on GitHub and describe the proposed changes.**
 
 ---
 
